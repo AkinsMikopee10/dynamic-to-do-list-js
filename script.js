@@ -18,7 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // Create a new <li> element
             const listItem = document.createElement('li');
-            listItem.textContent = taskText;
+            
+            // Use classList.add() to add a class for styling purposes
+            listItem.classList.add('task-item'); // Added this line
+
+            // The rest of the list item creation and appending
+            const taskTextNode = document.createTextNode(taskText);
+            listItem.appendChild(taskTextNode);
 
             // Create a new button for removing the task
             const removeButton = document.createElement('button');
